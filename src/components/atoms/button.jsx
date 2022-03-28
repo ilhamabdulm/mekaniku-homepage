@@ -9,7 +9,7 @@ const Button = (props) => {
 
   return (
     <button {...otherProps} className={variants[variant]} data-size={size}>
-      {icon || null} Login | Register
+      {icon || null} {children}
     </button>
   );
 };

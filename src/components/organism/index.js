@@ -6,3 +6,5 @@ export { default as HowWeWorks } from './how-we-works';
 export { default as Unduh } from './unduh';
 export { default as Service } from './services';
 export { default as Testimoni } from './testimoni';
+export { default as Information } from './information';
+export { default as Footer } from './footer';

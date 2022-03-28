@@ -1,3 +1,5 @@
+import { Button, SelectInput, TextInput, FormHeader } from 'components/atoms';
+
 import ServiceIcon from 'assets/icons/service-icon.svg';
 import PerawatanIcon from 'assets/icons/perawatan-icon.svg';
 import BursaIcon from 'assets/icons/bursa-icon.svg';
@@ -70,6 +72,109 @@ const Form = () => {
               })}
             </div>
           </header>
+
+          <forn>
+            <section className="px-5 py-5">
+              <FormHeader title="Waktu Servis" />
+
+              <div className="grid grid-cols-2 gap-8">
+                <TextInput
+                  label="Atur Tanggal"
+                  placeholder="Atur tanggal servis"
+                  name="date"
+                />
+                <TextInput
+                  label="Atur Jam"
+                  placeholder="Atur jam servis"
+                  name="time"
+                />
+              </div>
+            </section>
+
+            <section className="px-5 py-5">
+              <FormHeader title="Informasi Mobil" />
+
+              <div className="grid grid-cols-2 gap-8">
+                <SelectInput
+                  label="Merk"
+                  placeholder="Pilih merk mobil"
+                  name="merk"
+                />
+                <SelectInput
+                  label="Model"
+                  placeholder="Pilih model mobil"
+                  name="model"
+                />
+                <SelectInput
+                  label="Tahun"
+                  placeholder="Pilih tahun mobil"
+                  name="year"
+                />
+                <SelectInput
+                  label="Tipe"
+                  placeholder="Pilih tipe mobil"
+                  name="type"
+                />
+                <SelectInput
+                  label="Kapasitas Mesin"
+                  placeholder="Pilih Kapasitas Mesin mobil"
+                  name="capacity"
+                />
+                <SelectInput
+                  label="Jenis Transmisi"
+                  placeholder="Pilih Jenis Transmisi mobil"
+                  name="transmission"
+                />
+                <div className="col-span-2 w-full">
+                  <TextInput
+                    label="Jenis Keluhan"
+                    placeholder="cth. Mesin mobil cepat panas"
+                    name="complain"
+                  />
+                </div>
+              </div>
+            </section>
+
+            <section className="px-5 py-5">
+              <FormHeader title="Alamat Servis" />
+
+              <div className="grid grid-cols-2 gap-8">
+                <SelectInput
+                  label="Provinsi"
+                  placeholder="Pilih Provinsi"
+                  name="province"
+                />
+                <SelectInput
+                  label="Kota/Kabupaten"
+                  placeholder="Pilih Kota/Kabupaten"
+                  name="city"
+                />
+                <SelectInput
+                  label="Kecamatan"
+                  placeholder="Pilih Kecamatan"
+                  name="region"
+                />
+                <SelectInput
+                  label="Kode Pos"
+                  placeholder="Pilih Kode Pos"
+                  name="postal"
+                />
+                <div className="col-span-2 w-full">
+                  <TextInput
+                    textarea
+                    label="Alamat"
+                    placeholder="Masukkan alamat rumah anda"
+                    name="address"
+                  />
+                </div>
+              </div>
+            </section>
+            <section className="px-5 py-5">
+              <Button size="full" variant="primary">
+                Pesan
+              </Button>
+            </section>
+          </forn>
         </div>
       </article>
     </section>

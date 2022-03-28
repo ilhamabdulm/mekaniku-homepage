@@ -7,6 +7,8 @@ import {
   Service,
   Unduh,
   Testimoni,
+  Information,
+  Footer,
 } from 'components/organism';
 
 import './styles/App.scss';
@@ -22,6 +24,8 @@ function App() {
       <Service />
       <Testimoni />
       <Unduh />
+      <Information />
+      <Footer />
     </main>
   );
 }

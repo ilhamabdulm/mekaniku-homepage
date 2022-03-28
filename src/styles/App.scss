@@ -4,30 +4,5 @@
 @import './components/form';
 @import './components/bursa';
 @import './components/unduh';
-
-.root {
-  padding-bottom: 4rem;
-}
-
-.testimoni-card {
-  width: 476px;
-  height: 280px;
-  @apply relative p-4 bg-white border-2 border-white flex flex-col items-center justify-center rounded-lg;
-  opacity: 0.4;
-
-  &[data-current='true'] {
-    opacity: 1;
-    @apply border-yellow-500 shadow-2xl shadow-yellow-500;
-  }
-
-  .arrow {
-    @apply absolute w-12 h-12 bg-yellow-500 rounded-full grid place-content-center cursor-pointer;
-
-    &.left {
-      left: -1.5rem;
-    }
-    &.right {
-      right: -1.5rem;
-    }
-  }
-}
+@import './components/testimoni';
+@import './components/footer';
