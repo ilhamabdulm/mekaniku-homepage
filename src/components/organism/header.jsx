@@ -8,13 +8,13 @@ const NAV_MENU = [
   { title: 'Beranda', to: '/', isActive: true },
   { title: 'Layanan', to: '/', isActive: false },
   { title: 'Dukungan', to: '/', isActive: false },
-  { title: 'Beranda', to: '/', isActive: false },
+  { title: 'Artikel', to: '/', isActive: false },
   { title: 'Tentang Kami', to: '/', isActive: false },
 ];
 
 const Header = () => {
   return (
-    <header className="h-22 flex items-center bg-neutral-900">
+    <header className="h-22 flex items-center bg-neutral-900 sticky top-0 z-50">
       <div className="container mx-auto py-2 grid grid-cols-6 gap-x-24">
         <div className="flex items-center cursor-pointer">
           <img src={MekanikuLogo} alt="brand-logo" width={160} height={35} />

@@ -1,6 +1,7 @@
 import { Button } from 'components/atoms';
 
 import CardSample1 from 'assets/images/car-sample-1.png';
+import { CardBursa } from 'components/molecules';
 
 const Bursa = () => {
   return (
@@ -14,23 +15,17 @@ const Bursa = () => {
           {Array(8)
             .fill('x')
             ?.map((x, i) => (
-              <div className="bursa-card" key={'bursa-' + i}>
-                <img src={CardSample1} alt="car" width={223} height={128} />
-                <div className="mt-3">
-                  <h3 className="text-lg font-semibold">
-                    Rp{(468564000).toLocaleString('id')}
-                  </h3>
-                  <p className="text-xs font-semibold">
-                    Toyota Innova Venturer 2016
-                  </p>
-                </div>
-
-                <div className="border-y border-neutral-300 mt-3 p-1 flex items-center justify-between">
-                  <p className="text-xs text-neutral-500">Solar</p>
-                  <p className="text-xs text-neutral-500">Manual</p>
-                  <p className="text-xs text-neutral-500">2200cc</p>
-                </div>
-              </div>
+              <CardBursa
+                image={CardSample1}
+                price={468564000}
+                name="Toyota Innova Venturer 2016"
+                specification={{
+                  fuel: 'Solar',
+                  transmission: 'Manual',
+                  capacity: '2200cc',
+                }}
+                key={x + i}
+              />
             ))}
         </section>
       </div>
