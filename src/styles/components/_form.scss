@@ -1,0 +1,8 @@
+.form {
+  @apply relative;
+}
+
+.card {
+  background-color: #ffffff;
+  @apply relative -top-20 container rounded-xl h-auto shadow-lg overflow-hidden;
+}

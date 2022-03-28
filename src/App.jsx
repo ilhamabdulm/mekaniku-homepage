@@ -1,84 +1,46 @@
-import { Header, Hero } from 'components/organism';
+import { Button } from 'components/atoms';
+import { Form, Header, Hero } from 'components/organism';
 
-import ServiceIcon from './assets/icons/service-icon.svg';
-import PerawatanIcon from './assets/icons/perawatan-icon.svg';
-import BursaIcon from './assets/icons/bursa-icon.svg';
-import SparepartIcon from './assets/icons/sparepart-icon.svg';
-import TroubleshootIcon from './assets/icons/troubleshoot-icon.svg';
-import { ReactComponent as SolidCheckIcon } from './assets/icons/solid-check-icon.svg';
+import CardSample1 from 'assets/images/car-sample-1.png';
 
 import './styles/App.scss';
-
-const SERVICE_ITEM = [
-  {
-    name: 'Servis Berkala',
-    icon: ServiceIcon,
-    isSelected: true,
-  },
-  {
-    name: 'Perawatan',
-    icon: PerawatanIcon,
-    isSelected: false,
-  },
-  {
-    name: 'Bursa Mobil',
-    icon: BursaIcon,
-    isSelected: false,
-  },
-  {
-    name: 'Sparepart',
-    icon: SparepartIcon,
-    isSelected: false,
-  },
-  {
-    name: 'Troubleshoot',
-    icon: TroubleshootIcon,
-    isSelected: false,
-  },
-];
 
 function App() {
   return (
     <main className="root">
       <Header />
       <Hero />
-      <section className="form">
-        <article className="container mx-auto">
-          <div className="card">
-            <header className="p-5 bg-neutral-100 grid grid-cols-2 gap-8 items-center">
-              <div>
-                <p className="text-lg text-neutral-500">Mulai dari sekarang</p>
-                <h3 className="text-2xl font-bold text-neutral-900">
-                  Pilih Layananmu
-                </h3>
-              </div>
-              <div className="flex items-center justify-center gap-3">
-                {SERVICE_ITEM?.map((item, i) => {
-                  const selectedClass = item.isSelected
-                    ? `border-yellow-500`
-                    : 'border-white';
+      <Form />
+      <section className="bursa">
+        <div className="container mx-auto">
+          <header className="flex items-center justify-between">
+            <h2 className="font-bold text-3xl">Bursa Mobil</h2>
+            <Button variant="primary">Lihat Semua Bursa</Button>
+          </header>
+          <section className="mt-8 grid grid-cols-4 gap-8">
+            {Array(8)
+              .fill('x')
+              ?.map((x, i) => (
+                <div className="bursa-card" key={'bursa-' + i}>
+                  <img src={CardSample1} alt="car" width={223} height={128} />
+                  <div className="mt-3">
+                    <h3 className="text-lg font-semibold">
+                      Rp{(468564000).toLocaleString('id')}
+                    </h3>
+                    <p className="text-xs font-semibold">
+                      Toyota Innova Venturer 2016
+                    </p>
+                  </div>
 
-                  return (
-                    <div
-                      key={i + item.name}
-                      className={`relative flex flex-col gap-1 items-center bg-white rounded-lg px-6 py-4 shadow-sm cursor-pointer border ${selectedClass} hover:border-yellow-500`}
-                    >
-                      <div className="w-11 h-11 bg-yellow-500 rounded-full flex items-center justify-center">
-                        <img src={item.icon} width={24} height={24} />
-                      </div>
-                      <p className="font-semibold">{item.name}</p>
-                      {item.isSelected ? (
-                        <div className="absolute top-2 right-2">
-                          <SolidCheckIcon />
-                        </div>
-                      ) : null}
-                    </div>
-                  );
-                })}
-              </div>
-            </header>
-          </div>
-        </article>
+                  <div className="border-y border-neutral-300 mt-3 p-1 flex items-center justify-between">
+                    <p className="text-xs text-neutral-500">Solar</p>
+                    <p className="text-xs text-neutral-500">Manual</p>
+                    <p className="text-xs text-neutral-500">2200cc</p>
+                  </div>
+                </div>
+              ))}
+          </section>
+        </div>
       </section>
     </main>
   );
