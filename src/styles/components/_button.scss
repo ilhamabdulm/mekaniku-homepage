@@ -1,0 +1,50 @@
+@mixin baseBtn {
+  @apply flex items-center justify-center gap-2 py-3 px-4 text-neutral-600 rounded-lg font-medium text-center;
+}
+
+@mixin fullSize {
+  @apply w-full;
+}
+
+@mixin halfSize {
+  @apply w-1/2;
+}
+
+.btn-primary {
+  @include baseBtn();
+  @apply bg-yellow-400 border border-yellow-400 hover:border-yellow-500 text-neutral-600 hover:text-neutral-700;
+
+  &[data-size='full'] {
+    @include fullSize();
+  }
+
+  &[data-size='half'] {
+    @include halfSize();
+  }
+}
+
+.btn-secondary {
+  @include baseBtn();
+  @apply bg-transparent border border-yellow-400 hover:border-yellow-500 text-yellow-400 hover:text-yellow-500;
+
+  &[data-size='full'] {
+    @include fullSize();
+  }
+
+  &[data-size='half'] {
+    @include halfSize();
+  }
+}
+
+.btn-whatsapp {
+  @include baseBtn();
+  @apply bg-green-400 border border-green-400 hover:border-green-500 hover:bg-green-500 py-3 px-4 text-neutral-100;
+
+  &[data-size='full'] {
+    @include fullSize();
+  }
+
+  &[data-size='half'] {
+    @include halfSize();
+  }
+}
